@@ -1,0 +1,67 @@
+plugins {
+    id "com.android.application"
+    id 'com.google.gms.google-services' // Firebase Services
+    id "kotlin-android" // Đảm bảo dòng này có phiên bản tương ứng
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+android {
+    namespace "com.example.flutter_learning"
+    compileSdkVersion 34 // Hoặc 35 nếu đã nâng cấp AGP
+
+    ndkVersion flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "com.example.flutter_learning"
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        minSdkVersion 23
+        targetSdkVersion 33 // Cập nhật thành 33 nếu đã nâng cấp AGP
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // Thêm dòng này
+    implementation platform('com.google.firebase:firebase-bom:31.1.0') // Thêm bom Firebase
+    implementation 'com.google.firebase:firebase-analytics' // Ví dụ về Firebase Analytics
+}

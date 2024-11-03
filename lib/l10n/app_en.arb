@@ -1,0 +1,14 @@
+{
+    "@@locale": "en",
+    "helloWorld": "Hello World!",
+    "helloVTI": "Hello VTI, how is it going?",
+    "information": "Information",
+    "full_name": "FullName",
+    "date_of_birth": "DateOfBirth",
+    "phone_number": "PhoneNumber",
+    "email": "Email",
+    "gender": "Gender",
+    "submit":"Submit",
+    "setting": "Setting",
+    "language": "Language"
+}

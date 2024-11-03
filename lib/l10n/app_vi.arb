@@ -1,0 +1,14 @@
+{
+    "@@locale": "vi",
+    "helloWorld": "Xin chào Thế Giới",
+    "helloVTI": "Chào Các Bạn Nhé",
+    "information": "Thông tin cơ bản",
+    "full_name": "Họ Và Tên",
+    "date_of_birth": "Ngày Tháng Sinh",
+    "phone_number": "Số Điện Thoại",
+    "email": "Email",
+    "gender": "Giới Tính",
+    "submit":"Lưu",
+    "setting": "Cài Đặt",
+    "language": "Ngôn ngữ"
+}
